@@ -1,11 +1,27 @@
-import React from 'react';
-const FeedbackOptions = props => {
+import React from "react";
+import Styles from "./FeedbackOptions.module.css";
+const FeedbackOptions = (props) => {
   const { onLeaveFeedback } = props;
   return (
     <>
-      <button onClick={() => onLeaveFeedback(['good'])}>Good</button>
-      <button onClick={() => onLeaveFeedback(['neutral'])}>Neutral</button>
-      <button onClick={() => onLeaveFeedback(['bad'])}>Bad</button>
+      <button
+        className={Styles.btnReview}
+        onClick={() => onLeaveFeedback(["good"])}
+      >
+        Good
+      </button>
+      <button
+        className={Styles.btnReview}
+        onClick={() => onLeaveFeedback(["neutral"])}
+      >
+        Neutral
+      </button>
+      <button
+        className={Styles.btnReview}
+        onClick={() => onLeaveFeedback(["bad"])}
+      >
+        Bad
+      </button>
     </>
   );
 };

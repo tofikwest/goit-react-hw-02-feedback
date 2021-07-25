@@ -1,32 +1,32 @@
-import React from 'react';
-
+import React from "react";
+import Styles from "./Statistics.module.css";
 const Statistics = ({ good, neutral, bad, total, positivePercentage }) => {
   return (
     <>
       <ul className="Statistics">
         {total() ? (
           <>
-            <li>
+            <li className={Styles.li}>
               good: <span>{good}</span>
             </li>
 
-            <li>
+            <li className={Styles.li}>
               Neutral: <span>{neutral}</span>
             </li>
-            <li>
+            <li className={Styles.li}>
               Bad: <span>{bad}</span>
             </li>
-            <li>
+            <li className={Styles.li}>
               total: <span>{total()}</span>
             </li>
           </>
         ) : (
-          <li>No feedback given</li>
+          <li className={Styles.li}>No feedback given</li>
         )}
 
         {positivePercentage() >= 1 && (
-          <li>
-            Positive Feedback: <span>{positivePercentage() + '%'}</span>
+          <li className={Styles.li}>
+            Positive Feedback: <span>{positivePercentage() + "%"}</span>
           </li>
         )}
       </ul>
