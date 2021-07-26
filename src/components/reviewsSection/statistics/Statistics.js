@@ -5,7 +5,7 @@ const Statistics = ({ good, neutral, bad, total, positivePercentage }) => {
     <>
       <ul className="Statistics">
         {total() ? (
-          <>
+          <ul>
             <li className={Styles.li}>
               good: <span>{good}</span>
             </li>
@@ -19,15 +19,12 @@ const Statistics = ({ good, neutral, bad, total, positivePercentage }) => {
             <li className={Styles.li}>
               total: <span>{total()}</span>
             </li>
-          </>
+            <li className={Styles.li}>
+              Positive Feedback: <span>{positivePercentage() + "%"}</span>
+            </li>
+          </ul>
         ) : (
           <li className={Styles.li}>No feedback given</li>
-        )}
-
-        {positivePercentage() >= 1 && (
-          <li className={Styles.li}>
-            Positive Feedback: <span>{positivePercentage() + "%"}</span>
-          </li>
         )}
       </ul>
     </>
