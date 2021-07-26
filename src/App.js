@@ -1,7 +1,7 @@
-import React, { Component } from 'react';
-import FeedbackOptions from './components/reviewsSection/FeedbackOptions';
-import Statistics from './components/reviewsSection/Statistics';
-import Section from './components/Section';
+import React, { Component } from "react";
+import FeedbackOptions from "./components/reviewsSection/FeedbackOptions";
+import Statistics from "./components/reviewsSection/Statistics";
+import Section from "./components/Section";
 
 class App extends Component {
   state = {
@@ -9,8 +9,8 @@ class App extends Component {
     neutral: 0,
     bad: 0,
   };
-  onLeaveFeedback = name => {
-    this.setState(prevState => ({
+  onLeaveFeedback = (name) => {
+    this.setState((prevState) => ({
       [name]: prevState[name] + 1,
     }));
   };
@@ -27,10 +27,10 @@ class App extends Component {
   render() {
     return (
       <>
-        <Section title={'Please leave feedback'}>
+        <Section title={"Please leave feedback"}>
           <FeedbackOptions onLeaveFeedback={this.onLeaveFeedback} />
         </Section>
-        <Section title={'Statistics'}>
+        <Section title={"Statistics"}>
           <Statistics
             good={this.state.good}
             neutral={this.state.neutral}
@@ -43,4 +43,5 @@ class App extends Component {
     );
   }
 }
+
 export default App;
